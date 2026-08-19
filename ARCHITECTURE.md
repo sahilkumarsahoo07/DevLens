@@ -28,8 +28,8 @@ graph TD
     ReactRoot --> AI[Ask DevLens AI Assistant]
     
     AI --> AIProviderAdapter[AIProvider Adapter Interface]
-    AIProviderAdapter --> MockAI[MockAIProvider (Offline)]
-    AIProviderAdapter --> OpenAI[OpenAIProvider (API Key)]
+    AIProviderAdapter --> MockAI["MockAIProvider (Offline)"]
+    AIProviderAdapter --> OpenAI["OpenAIProvider (API Key)"]
 ```
 
 ---
