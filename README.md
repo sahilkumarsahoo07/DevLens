@@ -150,15 +150,17 @@ npm run build
 
 ---
 
-## 🔒 Privacy & Permissions Explanation
+## 🔒 Privacy Policy & Permissions
 
-DevLens is built with a **privacy-first** design:
-- **No Browsing History Collected**: DevLens does not track or send browsing history anywhere.
-- **Local Data Only**: Screenshots, settings, and color history stay strictly on your device inside `chrome.storage.local`.
+DevLens is built with a **privacy-first** design. Read our full [Privacy Policy](PRIVACY_POLICY.md).
+
+- **No Data Collection**: DevLens does not collect, track, or transmit any browsing history or user data.
+- **100% Local Processing**: All video recordings, screenshots, element inspections, and color history stay strictly on your local device.
 - **Permissions**:
-  - `activeTab`: Used to capture visible viewport screenshots and inspect elements on active tab.
-  - `storage`: Used to persist user settings and recent activity locally.
-  - `scripting`: Used to inject the DevLens overlay into webpages when requested.
+  - `activeTab` / `scripting`: Used to inspect elements and render the overlay on your active webpage.
+  - `desktopCapture`: Used exclusively for HD screen and browser tab video recording.
+  - `storage`: Used to persist user theme and tool settings locally.
+  - `downloads`: Used to save recorded video files directly to your device.
 
 ---
 
