@@ -1,0 +1,342 @@
+/* DevLens Design System & Theme Styling */
+
+:host, .devlens-theme-root {
+  --dl-bg: #0f172a;
+  --dl-bg-surface: #1e293b;
+  --dl-bg-card: #0f172a;
+  --dl-bg-hover: #334155;
+  --dl-border: #334155;
+  --dl-border-active: #3b82f6;
+  --dl-text: #f8fafc;
+  --dl-text-muted: #94a3b8;
+  --dl-primary: #3b82f6;
+  --dl-primary-hover: #2563eb;
+  --dl-accent: #8b5cf6;
+  --dl-success: #10b981;
+  --dl-warning: #f59e0b;
+  --dl-danger: #ef4444;
+  --dl-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5);
+  --dl-radius: 8px;
+  --dl-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: var(--dl-font);
+  box-sizing: border-box;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--dl-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+.devlens-theme-light {
+  --dl-bg: #ffffff;
+  --dl-bg-surface: #f8fafc;
+  --dl-bg-card: #ffffff;
+  --dl-bg-hover: #f1f5f9;
+  --dl-border: #e2e8f0;
+  --dl-border-active: #2563eb;
+  --dl-text: #0f172a;
+  --dl-text-muted: #64748b;
+  --dl-primary: #2563eb;
+  --dl-primary-hover: #1d4ed8;
+  --dl-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+/* Container resets inside shadow root */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--dl-font);
+}
+
+/* Floating Toolbar */
+.devlens-toolbar {
+  position: fixed;
+  z-index: 2147483647;
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  background: var(--dl-bg-surface);
+  border: 1px solid var(--dl-border);
+  border-radius: var(--dl-radius);
+  box-shadow: var(--dl-shadow);
+  backdrop-filter: blur(12px);
+  user-select: none;
+  transition: box-shadow 0.2s ease;
+}
+
+.devlens-toolbar-drag-handle {
+  cursor: grab;
+  color: var(--dl-text-muted);
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.devlens-toolbar-drag-handle:active {
+  cursor: grabbing;
+}
+
+.devlens-tool-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--dl-text-muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+.devlens-tool-btn:hover {
+  background: var(--dl-bg-hover);
+  color: var(--dl-text);
+}
+
+.devlens-tool-btn.active {
+  background: var(--dl-primary);
+  color: #ffffff;
+}
+
+.devlens-divider {
+  width: 1px;
+  height: 20px;
+  background: var(--dl-border);
+  margin: 0 4px;
+}
+
+/* Common Modal / Panel Overlay Base */
+.devlens-panel {
+  position: fixed;
+  z-index: 2147483646;
+  pointer-events: auto;
+  background: var(--dl-bg-surface);
+  border: 1px solid var(--dl-border);
+  border-radius: var(--dl-radius);
+  box-shadow: var(--dl-shadow);
+  color: var(--dl-text);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Modal Backdrop & Centering Overlay */
+.devlens-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2147483647;
+  pointer-events: auto;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.devlens-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--dl-border);
+  background: var(--dl-bg-card);
+}
+
+.devlens-panel-title {
+  font-weight: 600;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.devlens-panel-body {
+  padding: 14px;
+  overflow-y: auto;
+  max-height: 80vh;
+}
+
+/* Active Instruction Banner */
+.devlens-active-banner {
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px dashed var(--dl-primary);
+  border-radius: 6px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--dl-text);
+}
+
+/* Typography Grid Items Alignment */
+.devlens-typo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.devlens-typo-card {
+  background: var(--dl-bg);
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--dl-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 48px;
+}
+
+.devlens-typo-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--dl-text-muted);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.devlens-typo-value {
+  font-weight: 600;
+  font-size: 12px;
+  color: var(--dl-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Responsive Viewport Frame Overlay */
+.devlens-viewport-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483640;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.devlens-viewport-frame {
+  background: #ffffff;
+  border: 8px solid #1e293b;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+/* Button & Input Utilities */
+.devlens-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.devlens-btn-primary {
+  background: var(--dl-primary);
+  color: #ffffff;
+}
+.devlens-btn-primary:hover {
+  background: var(--dl-primary-hover);
+}
+
+.devlens-btn-secondary {
+  background: var(--dl-bg-hover);
+  color: var(--dl-text);
+  border-color: var(--dl-border);
+}
+.devlens-btn-secondary:hover {
+  background: var(--dl-border);
+}
+
+.devlens-input {
+  width: 100%;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--dl-border);
+  background: var(--dl-bg);
+  color: var(--dl-text);
+  font-size: 12px;
+  outline: none;
+}
+.devlens-input:focus {
+  border-color: var(--dl-border-active);
+}
+
+/* Code Snippet Box */
+.devlens-code-block {
+  background: var(--dl-bg);
+  border: 1px solid var(--dl-border);
+  border-radius: 6px;
+  padding: 10px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 11px;
+  white-space: pre-wrap;
+  word-break: break-all;
+  color: #38bdf8;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* Box Model Diagram */
+.devlens-box-model-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px;
+  background: var(--dl-bg);
+  border-radius: 6px;
+}
+
+.box-margin {
+  background: rgba(245, 158, 11, 0.15);
+  border: 1px dashed var(--dl-warning);
+  padding: 12px;
+  border-radius: 6px;
+  text-align: center;
+  width: 100%;
+}
+.box-border {
+  background: rgba(139, 92, 246, 0.15);
+  border: 1px dashed var(--dl-accent);
+  padding: 12px;
+  border-radius: 4px;
+}
+.box-padding {
+  background: rgba(16, 185, 129, 0.15);
+  border: 1px dashed var(--dl-success);
+  padding: 12px;
+  border-radius: 4px;
+}
+.box-content {
+  background: rgba(59, 130, 246, 0.25);
+  border: 1px solid var(--dl-primary);
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-align: center;
+}
+
